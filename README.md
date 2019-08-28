@@ -1,2 +1,2 @@
 # deep-markov-model
-Implementation of Deep Markov Model with only PyTorch.
+Implementation of Deep Markov Model using only PyTorch.
