@@ -2,6 +2,7 @@ from scipy.integrate import odeint
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import utils
 
 
 def f(x, t, N, F):
@@ -34,19 +35,13 @@ def generate(N=20, F=8.0, tf=30.0, dt=0.01):
     return x
 
 
-def plot(data, start=0, end=2000):
-    ax = sns.heatmap(data[start:end:, :])
-    ax.invert_yaxis()
-    plt.show()
-
-
-def save_to_numpy(data, file_path):
-    np.save(file_path, data)
-
-
 def main():
+    data_location = './data/lorenz_96.npy'
+
     data = generate(N=40, F=8.0)
-    save_to_numpy(data, './data/lorenz_96.npy')
+    utils.save_as_numpy(data, data_location)
+    data = utils.load_to_numpy(data_location)
+    utils.plot(data)
 
 
 if __name__ == "__main__":
