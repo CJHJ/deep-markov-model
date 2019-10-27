@@ -1,8 +1,7 @@
 from scipy.integrate import odeint
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import utils
+
+import utils.utils as utils
 
 
 def f(x, t, N, F):
